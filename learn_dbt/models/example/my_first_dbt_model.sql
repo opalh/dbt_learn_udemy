@@ -8,7 +8,8 @@
 */
 
 -- {{ config(materialized='table', alias='fist_model' , schema='TEST', database='analytics_test', post_hook='grant select on {{this}} to role analyst' ) }}
-{{ config(materialized='table', alias='fist_model' ) }}
+{{ config(materialized='table', alias='fist_model', tags=['nightly','example'] ) }}
+-- dbt run --model tag:nightly
 
 with source_data as (
 

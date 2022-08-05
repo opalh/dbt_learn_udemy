@@ -74,3 +74,14 @@ sources:
               - unique
               - not_null
       - name: orders
+  - name: sample_2
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: tpch_sf100
+    tables:
+      - name: customer
+        columns:
+          - name: c_custkey
+            tests:
+              - unique
+              - not_null
+          - name: orders
